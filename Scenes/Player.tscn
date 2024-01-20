@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://y3nighrxiifw"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_aeeux"]
+[ext_resource type="Texture2D" uid="uid://hmwypfsar7pn" path="res://Assets/player.png" id="1_hjesu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hf40f"]
+size = Vector2(32, 32)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_aeeux")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_hjesu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hf40f")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera"]
+
+[node name="DebugData" type="Label" parent="Camera/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
